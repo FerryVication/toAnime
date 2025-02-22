@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta ="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Anime | by FeriontAPI</title>
+    <link rel="stylesheet" href="./assets/toanime.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <div class="header">
+            <h1>Image to Anime</h1>
+            <p>Turn your photo into anime with one click! Just upload an image, and our AI will transform it into a cool anime-style illustration.</p>
+            <p>your data is not stored on our servers!.</p>
+          </div>
+            <!-- Drop Zone -->
+            <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+                <i data-feather="upload"></i>
+                <p> drag and drop or click to upload image</p>
+            </div>
+            <input type="file" id="fileInput" accept="image/*" onchange="previewImage()">
+
+            <!-- Preview Image -->
+            <div class="preview" id="preview"></div>
+
+            <!-- Loading Animation -->
+            <div id="loadingContainer" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p id="loadingText">Mengonversi ke anime...</p>
+            </div>
+
+            <!-- Convert Button -->
+            <button id="convertBtn" onclick="uploadImage()">To Anime!</button>
+
+            <!-- Progress Bar -->
+            <div class="progress-container" id="progressContainer" style="display: none;">
+                <p id="progressLabel">Waiting...</p>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="progress-text" id="progressText">0%</div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+      <p>Made with ♥️ by <a style="text-decoration: none; color: #007BFF;"  href="https://instagram.com/ferdev.me">Feri Pratama</a></p>
+    </div>
+    <script src="./assets/toanime.js"></script>
+</body>
+</html>
